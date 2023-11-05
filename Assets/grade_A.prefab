@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8460225756110303133}
   m_Layer: 0
   m_Name: grade_A
-  m_TagString: Ground
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653b5e1bf478393459ecafe55e81b850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  increaseAmount: 0.1
