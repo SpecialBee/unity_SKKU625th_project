@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // ÇÃ·¹ÀÌ¾î ÀÌµ¿ ¼Óµµ
+    public float moveSpeed = 5.0f; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½
 
     void Update()
     {
-        // ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿À» Ã³¸®ÇÒ ÄÚµå
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0);
-        moveDirection.Normalize(); // ´ë°¢¼± ÀÌµ¿À» ÀÏÁ¤ÇÑ ¼Óµµ·Î À¯ÁöÇÏ±â À§ÇØ Á¤±ÔÈ­
+        moveDirection.Normalize(); // ï¿½ë°¢ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
     }

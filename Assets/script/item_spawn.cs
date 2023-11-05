@@ -7,15 +7,15 @@ public class ItemSpawner : MonoBehaviour
     public GameObject itemPrefab;
     public float spawnRate = 2.0f;
     public float itemSpeed = 5.0f;
-    public float verticalRange = 2.0f; // À§¾Æ·¡·Î ÀÌµ¿ÇÒ ¹üÀ§
-    public float verticalSpeed = 1.0f; // ½ºÆù ÁöÁ¡ ÀÌµ¿ ¼Óµµ
+    public float verticalRange = 2.0f; // ìœ„ì•„ë˜ë¡œ ì´ë™í•  ë²”ìœ„
+    public float verticalSpeed = 1.0f; // ìŠ¤í° ì§€ì  ì´ë™ ì†ë„
 
     private float nextSpawnTime = 0;
     private bool movingUp = true;
 
     private void Update()
     {
-        // ½ºÆù ÁöÁ¡ À§¾Æ·¡·Î ÀÌµ¿
+        // ìŠ¤í° ì§€ì  ìœ„ì•„ë˜ë¡œ ì´ë™
         float verticalMovement = verticalSpeed * Time.deltaTime;
         if (movingUp)
         {
@@ -42,6 +42,5 @@ public class ItemSpawner : MonoBehaviour
         GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = newItem.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-itemSpeed, 0);
-
     }
 }
