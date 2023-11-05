@@ -6,15 +6,16 @@ public class ItemController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ground"))
-        {
-            // ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í Ãæµ¹ÇÏ¸é ¾ÆÀÌÅÛÀ» ÆÄ±«
-            Destroy(gameObject);
-        }
         if (other.CompareTag("Player"))
         {
-            // ´Ù¸¥ ¿ÀºêÁ§Æ®¿Í Ãæµ¹ÇÏ¸é ¾ÆÀÌÅÛÀ» ÆÄ±«
+            // ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ì¶©ëŒí•˜ë©´ ì•„ì´í…œì„ íŒŒê´´
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Ground"))
+        {
+            // ë‹¤ë¥¸ ì˜¤ë¸Œì íŠ¸ì™€ ì¶©ëŒí•˜ë©´ ì•„ì´í…œì„ íŒŒê´´
             Destroy(gameObject);
         }
     }
 }
+
