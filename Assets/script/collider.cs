@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Slider를 사용하기 위한 네임스페이스 추가
 
-public class ItemController : MonoBehaviour
+public class collider : MonoBehaviour
 {
-    public float increaseAmount = 0.1f; // 각 아이템의 증가량을 설정할 변수
+    public float healAmount = 20.0f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            GaugeController gaugeController = other.GetComponent<GaugeController>();
-            if (gaugeController != null)
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
             {
-                gaugeController.IncreaseGauge(increaseAmount);
-                Destroy(gameObject); // 아이템 파괴
+                playerHealth.Heal(healAmount);
+                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Ground"))
         {
             Destroy(gameObject);
         }

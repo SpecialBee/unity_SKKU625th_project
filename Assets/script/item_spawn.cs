@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawner : MonoBehaviour
+public class item_Spawn : MonoBehaviour
 {
     public GameObject itemPrefab;
     public float spawnRate = 2.0f;

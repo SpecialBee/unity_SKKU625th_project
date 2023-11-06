@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController2D : MonoBehaviour
+public class Jump : MonoBehaviour
 {
     public float jumpForce = 5f; // 점프 힘
     private Rigidbody2D rb;
