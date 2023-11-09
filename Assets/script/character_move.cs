@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class character_move : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // �÷��̾� �̵� �ӵ�
+     Rigidbody rb;
 
-    void Update()
+    void Start()
     {
-        // �÷��̾��� �̵��� ó���� �ڵ�
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0);
-        moveDirection.Normalize(); // �밢�� �̵��� ������ �ӵ��� �����ϱ� ���� ����ȭ
-
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+        rb = GetComponent<Rigidbody>();
+        // Rigidbody의 회전을 고정하여 캐릭터가 넘어지지 않도록 합니다.
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 }
+
+
+
